@@ -4,6 +4,7 @@ const bodyParser = require('koa-bodyparser')
 const cors = require('koa-cors')
 
 app.use(bodyParser())
+
 app.use(cors())
 if(process.env.NODE_ENV = 'test') {
   const logger = require('koa-logger')
