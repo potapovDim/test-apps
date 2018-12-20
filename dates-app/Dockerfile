@@ -1,0 +1,1 @@
+docker run --restart=always -p 127.0.0.1:27017:27017 --hostname mongo-test --name mongo-test -d mongo --setParameter failIndexKeyTooLong=false
