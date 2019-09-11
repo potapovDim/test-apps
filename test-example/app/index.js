@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
+import React, {Component} from 'react'
+import {Provider} from 'react-redux'
 import store from './reducer/rootReducer'
 
-import { setState } from './reducer/index'
+import {setState} from './reducer/index'
 
-import { Login } from './src/login'
+import {Login} from './src/login'
 
 import Tables from './src'
 
@@ -16,12 +16,12 @@ class Root extends Component {
   }
 
   login = (user) => {
-    this.setState({ user })
+    this.setState({user})
   }
 
 
   render() {
-    const { user } = this.state
+    const {user} = this.state
     console.log(user)
     return (<div>
       {

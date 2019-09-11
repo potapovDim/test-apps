@@ -12,7 +12,7 @@ async function assertFn() {
       password: 'test'
     })
   }).then(res => res.text())
-  console.log(a)
+  console.log(a, '!!!')
 }
 
 

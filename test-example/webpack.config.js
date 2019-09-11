@@ -1,7 +1,7 @@
 
 const env = process.env.NODE_ENV
 
-const sourceFile = env === 'base' ? './main.js' : './main-server.js'
+const sourceFile = './main.js'
 
 module.exports = {
   entry: sourceFile,
@@ -9,6 +9,7 @@ module.exports = {
     path: './',
     filename: "index.js"
   },
+
   devServer: {
     port: 5555,
     historyApiFallback: true

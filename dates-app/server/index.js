@@ -1,18 +1,21 @@
-const Koa = require('koa')
-const app = new Koa()
-const bodyParser = require('koa-bodyparser')
-const cors = require('koa-cors')
+var Koa = require('koa');
+var bodyParser = require('koa-bodyparser');
 
-app.use(bodyParser())
+var app = new Koa();
+app.use(bodyParser());
 
-app.use(cors())
-if(process.env.NODE_ENV = 'test') {
-  const logger = require('koa-logger')
-  app.use(logger())
-}
-
-app.use(require('./routes')())
-
+app.use(async ctx => {
+  console.log('!!!!!!!!!!!!!!!!')
+  // the parsed body will store in ctx.request.body
+  // if nothing was parsed, body will be an empty object {}
+  const {request: {body}} = ctx
+  ctx.body = ctx.request.body;
+  console.log(body)
+  ctx.body = {
+    a: 'b'
+  }
+  return ctx
+});
 const PORT = 8081
 
 app.listen(PORT)
